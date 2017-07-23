@@ -1,0 +1,46 @@
+{
+  "name": "try-component",
+  "version": "0.1.0",
+  "description": "A safety net for your React components",
+  "main": "dist/try-component.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --watch",
+    "bundle": "webpack --progress --colors"
+  },
+  "author": "Giles Van Gruisen <gilesvg@gmail.com> (http://github.com/gilesvangruisen)",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "loglevel": "^1.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilesvangruisen/try-component.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "error",
+    "handling",
+    "react",
+    "native",
+    "exception"
+  ],
+  "bugs": {
+    "url": "https://github.com/gilesvangruisen/try-component/issues"
+  },
+  "homepage": "https://github.com/gilesvangruisen/try-component#readme"
+}
