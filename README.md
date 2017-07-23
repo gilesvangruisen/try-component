@@ -21,7 +21,7 @@ npm install try-component
 (Component, errorHandler) -> (WrappedComponent)
 ```
 
-…where errorHandler is a function that accepts an `Error` object and a `context` with the following format:
+…where errorHandler is a function to be called upon a runtime error, and will be passed both an `Error` object and a `context` object with the following format:
 
 ```
 {
@@ -31,11 +31,15 @@ npm install try-component
 }
 ```
 
-Similarly, `tryComponentFactory` is a curried equivalent of `tryComponent` with the following signature:
+The result is a new, wrapped component you can use in place of the previous one.
+
+The API also exposes a separate function, `tryComponentFactory`, which is simply a curried equivalent of `tryComponent` with the following signature:
 
 ```
 (errorHandler) -> (Component) -> (WrappedComponent)
 ```
+
+…making it easy to define a single `tryComponent` function to wrap multiple components with a common global or ad-hoc error handler.
 
 ## Example
 
@@ -52,6 +56,10 @@ export default tryComponent(MyComponent, (error, context) => {
   console.log(context) // { arguments, state, props }
 })
 ```
+
+## Why
+
+It can be tricky to wrap React components in a single try/catch block. The original motivation was to be able to make React Native apps fail more gracefully because release builds will crash upon runtime errors, and a crash is probably the last thing you want your app to do, as it provides users no valuable feedback or direction for moving forward. That said, there is nothing about this library that is specific to React Native.
 
 ## License
 
