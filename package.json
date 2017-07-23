@@ -4,8 +4,9 @@
   "description": "A safety net for your React components",
   "main": "dist/try-component.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --watch",
-    "bundle": "webpack --progress --colors"
+    "start": "node_modules/.bin/webpack-dev-server --progress --colors --watch",
+    "run-example": "node_modules/.bin/webpack-dev-server --config example/webpack.config.js --content-base example",
+    "bundle": "node_modules/.bin/webpack --progress --colors"
   },
   "author": "Giles Van Gruisen <gilesvg@gmail.com> (http://github.com/gilesvangruisen)",
   "license": "MIT",
